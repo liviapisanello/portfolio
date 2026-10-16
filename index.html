@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio · Dev Full Stack</title>
+  <meta name="description"
+    content="Portfólio gamificado de desenvolvedora Full Stack e estudante de Engenharia de Software: ficha de personagem, tech stack, conquistas e projetos.">
+  <meta name="theme-color" content="#0A0614">
+
+  <!-- Marca a página como "com JS" antes da pintura: efeitos só se aplicam se o JS carregar -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Fontes: Press Start 2P (títulos/labels pixel) + IBM Plex Mono (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+
+  <!--
+    Tailwind via CDN (Play CDN): ótimo para desenvolver e prototipar.
+    NÃO é a configuração recomendada para produção: compile o Tailwind (veja o README.md).
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+            pixel: ['"Press Start 2P"', 'ui-monospace', 'monospace']
+          },
+          // Cores vindas das variáveis CSS de assets/css/styles.css (única fonte de verdade)
+          colors: {
+            ink: 'rgb(var(--c-bg) / <alpha-value>)',
+            panel: 'rgb(var(--c-panel) / <alpha-value>)',
+            fg: 'rgb(var(--c-fg) / <alpha-value>)',
+            violet: { 400: 'rgb(var(--c-violet-400) / <alpha-value>)', 500: 'rgb(var(--c-violet-500) / <alpha-value>)', 700: 'rgb(var(--c-violet-700) / <alpha-value>)' },
+            cyan: 'rgb(var(--c-cyan) / <alpha-value>)',
+            lime: 'rgb(var(--c-lime) / <alpha-value>)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body class="bg-ink font-sans text-fg antialiased">
+  <a href="#main" class="skip-link">Ir para o conteúdo</a>
+
+  <!-- Camadas CRT (decorativas) -->
+  <div class="crt crt-scan" aria-hidden="true"></div>
+  <div class="crt crt-sweep" aria-hidden="true"></div>
+  <div class="crt crt-vignette" aria-hidden="true"></div>
+
+  <!-- Aviso de conquista -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============ NAVEGAÇÃO ============ -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b-2 border-violet-700 bg-ink/90 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5" aria-label="Principal">
+      <!-- EDITAR: Livia Pisanello -->
+      <a href="#inicio" class="logo font-pixel text-xs text-fg sm:text-sm" data-edit="nome">
+        LIVIA_PISANELLO<span class="logo-cursor" aria-hidden="true"></span>
+      </a>
+
+      <ul class="hidden items-center gap-1 md:flex">
+        <li><a class="nav-link" href="#sobre">Sobre mim</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#conquistas">Conquistas</a></li>
+        <li><a class="nav-link" href="#projetos">Projetos</a></li>
+        <li><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <button id="crt-toggle" type="button" class="chip-btn" aria-pressed="true"
+          title="Ligar ou desligar o efeito CRT">
+          <i data-lucide="tv" class="h-4 w-4" aria-hidden="true"></i>
+          CRT <span id="crt-state">ON</span>
+        </button>
+        <button id="menu-toggle" type="button" class="icon-btn md:hidden" aria-expanded="false"
+          aria-controls="menu-mobile" aria-label="Abrir menu">
+          <i data-lucide="menu" class="h-5 w-5" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="menu-mobile" class="hidden border-t-2 border-violet-700 bg-ink md:hidden">
+      <ul class="mx-auto flex max-w-6xl flex-col px-5 py-2">
+        <li><a class="nav-link-mobile" href="#sobre">Sobre mim</a></li>
+        <li><a class="nav-link-mobile" href="#skills">Skills</a></li>
+        <li><a class="nav-link-mobile" href="#conquistas">Conquistas</a></li>
+        <li><a class="nav-link-mobile" href="#projetos">Projetos</a></li>
+        <li><a class="nav-link-mobile" href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="hero relative isolate overflow-hidden pt-16" aria-labelledby="hero-title">
+      <div class="hero-floor" aria-hidden="true"></div>
+
+      <div
+        class="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-5 py-14 lg:grid-cols-12 lg:py-16">
+        <div class="lg:col-span-7">
+          <p class="chip"><span class="status-dot" aria-hidden="true"></span>FULL STACK DEVELOPER</p>
+
+          <h1 id="hero-title" class="neon-title mt-7 font-pixel text-[clamp(1.3rem,4.3vw,2.4rem)] leading-[1.5]">
+            Transformando ideias em experiências digitais.
+          </h1>
+
+          <!-- Caixa de diálogo estilo RPG: o texto é digitado uma vez (JS); o texto completo fica no HTML -->
+          <div class="dialog mt-8 max-w-xl">
+            <p class="text-base leading-relaxed sm:text-lg">
+              <span data-typing>Desenvolvedora Full Stack e estudante de Engenharia de Software, apaixonada por
+                tecnologia, comunicação e aprendizado contínuo.</span>
+            </p>
+            <span class="dialog-arrow" aria-hidden="true">▼</span>
+          </div>
+
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a href="#projetos" class="btn btn-primary">
+              <i data-lucide="play" class="h-4 w-4" aria-hidden="true"></i>
+              Explorar projetos
+            </a>
+            <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+
+            <!-- EDITAR: URLs do GitHub e LinkedIn -->
+            <span class="flex items-center gap-2">
+              <a href="https://github.com/" class="icon-btn" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub (abre em nova aba)" data-edit="github">
+                <i data-lucide="github" class="h-5 w-5" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/" class="icon-btn" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn (abre em nova aba)" data-edit="linkedin">
+                <i data-lucide="linkedin" class="h-5 w-5" aria-hidden="true"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Card de personagem (momento visual do hero) -->
+        <div class="lg:col-span-5">
+          <!--
+            EDITAR: HP, MP e XP usam data-value / data-max. Nível em "NV 01".
+            Os valores atuais (50/100) são PLACEHOLDERS, não uma medida real.
+          -->
+          <article class="char pixel-box" aria-labelledby="char-title" data-placeholder="true">
+            <header class="char-bar">
+              <span class="font-pixel text-[0.65rem] text-cyan">PLAYER 1</span>
+              <span class="tag-live"><span class="status-dot" aria-hidden="true"></span>ONLINE</span>
+            </header>
+
+            <div class="flex items-center gap-4 p-5">
+              <!-- EDITAR: troque o avatar por uma imagem sua -->
+              <img src="assets/img/avatar.svg" alt="Avatar em pixel art: um monitor sorridente sobre um corpo violeta"
+                width="88" height="88" class="avatar" decoding="async">
+              <div class="min-w-0">
+                <h2 id="char-title" class="truncate font-pixel text-sm leading-6 text-fg" data-edit="nome">Lívia
+                  Pisanello</h2>
+                <p class="mt-1 text-sm text-cyan">Classe: Full Stack</p>
+                <p class="mt-3 inline-block border-2 border-lime px-2 py-1 font-pixel text-[0.65rem] text-lime">NV 01
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4 border-t-2 border-violet-700 p-5" role="group" aria-label="Status do personagem">
+              <div class="stat stat-hp" data-value="75" data-max="100">
+                <div class="stat-head"><span class="stat-name">HP</span><span class="stat-num"><span
+                      data-num></span>/100</span></div>
+                <div class="meter" role="progressbar" aria-label="HP" aria-valuemin="0" aria-valuemax="100"><span
+                    class="meter-fill"></span></div>
+              </div>
+              <div class="stat stat-mp" data-value="75" data-max="100">
+                <div class="stat-head"><span class="stat-name">MP</span><span class="stat-num"><span
+                      data-num></span>/100</span></div>
+                <div class="meter" role="progressbar" aria-label="MP" aria-valuemin="0" aria-valuemax="100"><span
+                    class="meter-fill"></span></div>
+              </div>
+              <div class="stat stat-xp" data-value="75" data-max="100">
+                <div class="stat-head"><span class="stat-name">XP · Nível de Dev</span><span class="stat-num"><span
+                      data-num></span>/100</span></div>
+                <div class="meter" role="progressbar" aria-label="XP para o próximo nível" aria-valuemin="0"
+                  aria-valuemax="100"><span class="meter-fill"></span></div>
+              </div>
+            </div>
+
+            <dl class="divide-y-2 divide-violet-700/60 border-t-2 border-violet-700 text-sm">
+              <div class="flex items-center justify-between gap-4 px-5 py-3">
+                <dt class="hud-label">Guilda</dt>
+                <dd>Engenharia de Software</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 px-5 py-3">
+                <dt class="hud-label">Missão atual</dt>
+                <dd>Aprender coisas novas</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MIM ============ -->
+    <section id="sobre" class="section" aria-labelledby="sobre-title">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-12 lg:gap-14">
+        <div class="reveal lg:col-span-7">
+          <h2 id="sobre-title" class="section-title">Sobre mim</h2>
+          <div class="mt-7 space-y-5 text-base leading-relaxed text-fg/85 sm:text-lg">
+            <p>
+              Sou desenvolvedora Full Stack e estudante de Engenharia de Software. Gosto de construir coisas que
+              funcionam por dentro e fazem sentido por fora.
+            </p>
+            <p>
+              Tecnologia me move, comunicação faz o trabalho andar, e aprender coisa nova é o que me mantém curiosa. Se
+              existe um problema interessante, eu quero entender como ele funciona.
+            </p>
+          </div>
+
+          <ul class="mt-8 flex flex-wrap gap-3" aria-label="Interesses">
+            <li class="badge"><i data-lucide="cpu" class="h-4 w-4" aria-hidden="true"></i>Tecnologia</li>
+            <li class="badge"><i data-lucide="message-circle" class="h-4 w-4" aria-hidden="true"></i>Comunicação</li>
+            <li class="badge"><i data-lucide="sprout" class="h-4 w-4" aria-hidden="true"></i>Aprendizado contínuo</li>
+          </ul>
+        </div>
+
+        <aside class="reveal lg:col-span-5" aria-labelledby="quest-title">
+          <div class="pixel-box p-6">
+            <h3 id="quest-title" class="font-pixel text-xs leading-5 text-cyan">Diário de missões</h3>
+            <ul class="mt-5 space-y-4 text-sm">
+              <li class="quest"><span class="quest-mark" aria-hidden="true">►</span><span><strong
+                    class="font-bold text-fg">Em andamento:</strong> Engenharia de Software</span></li>
+              <li class="quest"><span class="quest-mark" aria-hidden="true">►</span><span><strong
+                    class="font-bold text-fg">Contínua:</strong> Aprender coisas novas</span></li>
+              <li class="quest"><span class="quest-mark" aria-hidden="true">►</span><span><strong
+                    class="font-bold text-fg">Habilidade passiva:</strong> Comunicação</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ TECH STACK ============ -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title" data-placeholder="true">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal flex flex-wrap items-end justify-between gap-5">
+          <div class="max-w-2xl">
+            <h2 id="skills-title" class="section-title">Tech stack</h2>
+            <p class="mt-5 text-base leading-relaxed text-fg/85 sm:text-lg">
+              Meu inventário de ferramentas, com barras de XP por tecnologia.
+            </p>
+          </div>
+          <button id="replay-xp" type="button" class="btn btn-ghost btn-sm">
+            <i data-lucide="rotate-cw" class="h-4 w-4" aria-hidden="true"></i>
+            Recarregar XP
+          </button>
+        </div>
+
+        <!--
+          EDITAR OS NÍVEIS: altere o data-level (0–100) de cada <li class="skill">.
+          Percentual, barra, LV e rótulo atualizam sozinhos.
+          Os valores abaixo (50) são PLACEHOLDERS, não uma avaliação real.
+        -->
+        <div class="mt-12 grid gap-6 lg:grid-cols-5">
+
+          <div class="reveal pixel-box p-6 lg:col-span-3">
+            <h3 class="group-title"><i data-lucide="braces" class="h-4 w-4" aria-hidden="true"></i>Linguagens</h3>
+            <ul class="mt-6 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+              <li class="skill" data-level="90">
+                <div class="skill-head"><i data-lucide="file-code-2" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">TypeScript</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com TypeScript"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="90">
+                <div class="skill-head"><i data-lucide="file-json" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">JavaScript</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com JavaScript"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="terminal" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">Python</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Python"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="coffee" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">Java</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Java" aria-valuemin="0"
+                  aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal pixel-box p-6 lg:col-span-2">
+            <h3 class="group-title"><i data-lucide="layers" class="h-4 w-4" aria-hidden="true"></i>Frameworks e runtime
+            </h3>
+            <ul class="mt-6 space-y-7">
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="server" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">NestJS</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com NestJS"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="layout-template" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">Next.js</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Next.js"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="hexagon" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">Node.js</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Node.js"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal pixel-box p-6 lg:col-span-5">
+            <h3 class="group-title"><i data-lucide="database" class="h-4 w-4" aria-hidden="true"></i>Dados</h3>
+            <ul class="mt-6 grid gap-x-8 gap-y-7 md:grid-cols-3">
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="database" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">MongoDB</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com MongoDB"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="table-2" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">SQL</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com SQL" aria-valuemin="0"
+                  aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="50">
+                <div class="skill-head"><i data-lucide="gem" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">Prisma</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Prisma"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="mt-6 text-sm text-fg/70">
+          As porcentagens são uma representação visual aproximada de familiaridade, não uma métrica de competência.
+        </p>
+        <!-- Visível enquanto a seção tiver data-placeholder="true". Mude para "false" ao editar os níveis. -->
+        <p class="placeholder-note mt-2 hidden text-sm text-lime" role="note">
+          Valores ilustrativos (50%) a serem substituídos pelos níveis reais.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONQUISTAS ============ -->
+    <section id="conquistas" class="section" aria-labelledby="conquistas-title">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal flex flex-wrap items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <h2 id="conquistas-title" class="section-title">Conquistas</h2>
+            <p class="mt-5 text-base leading-relaxed text-fg/85 sm:text-lg">
+              Passe o mouse ou clique (ou toque) em cada cartão para desbloquear.
+            </p>
+          </div>
+          <div class="w-full max-w-xs">
+            <p class="flex justify-between text-sm"><span class="hud-label">Progresso</span><span
+                class="font-pixel text-xs text-lime" id="ach-count" aria-live="polite">0/6</span></p>
+            <div class="meter meter-ach mt-2" role="progressbar" id="ach-meter" aria-label="Conquistas desbloqueadas"
+              aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span class="meter-fill"></span></div>
+          </div>
+        </div>
+
+        <!--
+          EDITAR: cada conquista é um <button class="ach" data-id="...">.
+          Troque título/descrição/ícone (data-lucide) ou adicione conquistas reais suas.
+          Atualize o "/6" do contador se mudar a quantidade (o JS conta os cartões sozinho).
+        -->
+        <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="reveal">
+            <button type="button" class="ach" data-id="full-stack" data-title="Full Stack">
+              <span class="ach-lock"><i data-lucide="lock" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Conquista bloqueada</span><span class="ach-desc">Clique para revelar</span></span>
+              <span class="ach-open"><i data-lucide="layers" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Full Stack</span><span class="ach-desc">Do banco de dados à interface: NestJS,
+                  Next.js e MongoDB na mesma caixa de ferramentas.</span></span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="ach" data-id="estudante" data-title="Estudante de Eng. de Software">
+              <span class="ach-lock"><i data-lucide="lock" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Conquista bloqueada</span><span class="ach-desc">Clique para revelar</span></span>
+              <span class="ach-open"><i data-lucide="graduation-cap" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Estudante de Eng. de Software</span><span class="ach-desc">Aprendendo a base por
+                  trás do código.</span></span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="ach" data-id="comunicacao" data-title="Comunicação">
+              <span class="ach-lock"><i data-lucide="lock" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Conquista bloqueada</span><span class="ach-desc">Clique para revelar</span></span>
+              <span class="ach-open"><i data-lucide="message-circle" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Comunicação</span><span class="ach-desc">Tecnologia também é conversa: explicar bem
+                  faz o time andar.</span></span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="ach" data-id="aprendizado" data-title="Aprendizado contínuo">
+              <span class="ach-lock"><i data-lucide="lock" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Conquista bloqueada</span><span class="ach-desc">Clique para revelar</span></span>
+              <span class="ach-open"><i data-lucide="sprout" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Aprendizado contínuo</span><span class="ach-desc">Sempre estudando algo
+                  novo.</span></span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="ach" data-id="inventario" data-title="Inventário de 10">
+              <span class="ach-lock"><i data-lucide="lock" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Conquista bloqueada</span><span class="ach-desc">Clique para revelar</span></span>
+              <span class="ach-open"><i data-lucide="package" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Inventário de 10</span><span class="ach-desc">Dez tecnologias na stack, entre
+                  linguagens, frameworks e dados.</span></span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="ach ach-secret" data-id="secreta" data-title="Código secreto">
+              <span class="ach-lock"><i data-lucide="gamepad-2" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Conquista secreta</span><span class="ach-desc">Dica: um código clássico, digitado no
+                  teclado.</span></span>
+              <span class="ach-open"><i data-lucide="gamepad-2" class="ach-icon" aria-hidden="true"></i><span
+                  class="ach-title">Código secreto</span><span class="ach-desc">↑ ↑ ↓ ↓ ← → ← → B A. Você conhece os
+                  clássicos.</span></span>
+            </button>
+          </li>
+        </ul>
+
+        <p class="mt-6">
+          <button id="reset-ach" type="button" class="link-btn">Resetar conquistas</button>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <section id="projetos" class="section section-alt" aria-labelledby="projetos-title">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal max-w-2xl">
+          <h2 id="projetos-title" class="section-title">Projetos em destaque</h2>
+          <p class="mt-5 text-base leading-relaxed text-fg/85 sm:text-lg">
+            Três fases para ver como eu penso e como escrevo código.
+          </p>
+        </div>
+
+        <!--
+          EDITAR cada card: imagem (src + alt), título, descrição, tecnologias e links.
+          Os links são placeholders válidos (github.com e example.com).
+          Sem demo online? Apague o <a> "Demo" do card.
+        -->
+        <div class="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+
+          <article class="reveal project pixel-box">
+            <div class="project-media">
+              <img src="assets/img/project-1.svg"
+                alt="Prévia ilustrativa do Projeto 1: painel com gráficos e cartões (placeholder)" width="640"
+                height="400" loading="lazy" decoding="async">
+              <span class="project-stage">FASE 01</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="font-pixel text-sm leading-6 text-fg">Nome do Projeto 1</h3>
+              <p class="mt-3 text-sm leading-relaxed text-fg/80">Descrição curta do projeto: o problema que resolve e o
+                que você construiu.</p>
+              <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tecnologias usadas">
+                <li class="tag">NestJS</li>
+                <li class="tag">MongoDB</li>
+                <li class="tag">TypeScript</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-3 pt-6">
+                <a class="link-btn link-btn-primary" href="https://github.com/" target="_blank"
+                  rel="noopener noreferrer" data-edit="repo">
+                  <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>Código<span class="sr-only"> do Nome do
+                    Projeto 1 no GitHub (abre em nova aba)</span>
+                </a>
+                <a class="link-btn" href="https://example.com/" target="_blank" rel="noopener noreferrer"
+                  data-edit="demo">
+                  <i data-lucide="external-link" class="h-4 w-4" aria-hidden="true"></i>Demo<span class="sr-only"> do
+                    Nome do Projeto 1 (abre em nova aba)</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal project pixel-box">
+            <div class="project-media">
+              <img src="assets/img/project-2.svg"
+                alt="Prévia ilustrativa do Projeto 2: tela de aplicativo com lista e botão de ação (placeholder)"
+                width="640" height="400" loading="lazy" decoding="async">
+              <span class="project-stage">FASE 02</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="font-pixel text-sm leading-6 text-fg">Nome do Projeto 2</h3>
+              <p class="mt-3 text-sm leading-relaxed text-fg/80">Descrição curta do projeto: o problema que resolve e o
+                que você construiu.</p>
+              <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tecnologias usadas">
+                <li class="tag">Next.js</li>
+                <li class="tag">Prisma</li>
+                <li class="tag">SQL</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-3 pt-6">
+                <a class="link-btn link-btn-primary" href="https://github.com/" target="_blank"
+                  rel="noopener noreferrer" data-edit="repo">
+                  <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>Código<span class="sr-only"> do Nome do
+                    Projeto 2 no GitHub (abre em nova aba)</span>
+                </a>
+                <a class="link-btn" href="https://example.com/" target="_blank" rel="noopener noreferrer"
+                  data-edit="demo">
+                  <i data-lucide="external-link" class="h-4 w-4" aria-hidden="true"></i>Demo<span class="sr-only"> do
+                    Nome do Projeto 2 (abre em nova aba)</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal project pixel-box md:col-span-2 lg:col-span-1">
+            <div class="project-media">
+              <img src="assets/img/project-3.svg"
+                alt="Prévia ilustrativa do Projeto 3: janela de terminal com respostas de uma API (placeholder)"
+                width="640" height="400" loading="lazy" decoding="async">
+              <span class="project-stage">FASE 03</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="font-pixel text-sm leading-6 text-fg">Nome do Projeto 3</h3>
+              <p class="mt-3 text-sm leading-relaxed text-fg/80">Descrição curta do projeto: o problema que resolve e o
+                que você construiu.</p>
+              <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tecnologias usadas">
+                <li class="tag">Python</li>
+                <li class="tag">Node.js</li>
+                <li class="tag">SQL</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-3 pt-6">
+                <a class="link-btn link-btn-primary" href="https://github.com/" target="_blank"
+                  rel="noopener noreferrer" data-edit="repo">
+                  <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>Código<span class="sr-only"> do Nome do
+                    Projeto 3 no GitHub (abre em nova aba)</span>
+                </a>
+                <a class="link-btn" href="https://example.com/" target="_blank" rel="noopener noreferrer"
+                  data-edit="demo">
+                  <i data-lucide="external-link" class="h-4 w-4" aria-hidden="true"></i>Demo<span class="sr-only"> do
+                    Nome do Projeto 3 (abre em nova aba)</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section id="contato" class="section contact relative isolate overflow-hidden" aria-labelledby="contato-title">
+      <div class="hero-floor hero-floor--contact" aria-hidden="true"></div>
+
+      <div class="reveal relative mx-auto max-w-3xl px-5 text-center">
+        <h2 id="contato-title" class="neon-title font-pixel text-[clamp(1.3rem,4.6vw,2.6rem)] leading-[1.5]">Vamos
+          construir algo incrível?</h2>
+        <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-fg/85 sm:text-lg">
+          Estou sempre aberta a aprender, trocar ideias e explorar novas oportunidades na tecnologia.
+        </p>
+
+        <!-- EDITAR: troque seu.email@exemplo.com pelo e-mail real (nos dois lugares) -->
+        <div class="mt-10 flex flex-col items-center gap-5">
+          <a href="mailto:seu.email@exemplo.com" class="btn btn-primary btn-lg" data-edit="email">
+            <i data-lucide="mail" class="h-5 w-5" aria-hidden="true"></i>
+            Enviar um e-mail
+          </a>
+          <p class="terminal-line" data-edit="email-text"><span aria-hidden="true">&gt; </span>seu.email@exemplo.com</p>
+        </div>
+
+        <ul class="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <li>
+            <a href="https://github.com/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
+              data-edit="github">
+              <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>GitHub<span class="sr-only"> (abre em nova
+                aba)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
+              data-edit="linkedin">
+              <i data-lucide="linkedin" class="h-4 w-4" aria-hidden="true"></i>LinkedIn<span class="sr-only"> (abre em
+                nova aba)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2 border-violet-700 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-sm text-fg/70 sm:flex-row">
+      <p>© <span id="year"></span> <span data-edit="nome">Livia Pisanello</span></p>
+      <a href="#inicio" class="inline-flex min-h-[44px] items-center gap-2 rounded px-1 hover:text-cyan">
+        Voltar ao topo <i data-lucide="arrow-up" class="h-4 w-4" aria-hidden="true"></i>
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>
