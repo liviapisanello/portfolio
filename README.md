@@ -11,12 +11,15 @@ Portfólio pessoal de Lívia Pisanello, desenvolvedora full stack e estudante de
 - Os links de projeto abrem os repositórios GitHub; os dados de contato incluem LinkedIn, e-mail e telefone para facilitar contato profissional.
 
 ## Prompt Inicial
+
 Preciso que faça um projeto em html com tailwind. Ele consiste em um portfólio dev interessante, claro e que chame a atenção para as skills.
 Sobre mim, sou desenvolvedora fullstack e estudante de engenharia de software.
 
 ## Sobre mim
+
 Gosto muito de tecnologia, comunicação e aprender coisas novas.
 Tech Stack
+
 - TypeScript / JavaScript 90%
 - Node.js / NestJS 85%
 - Next.js / React 85%
@@ -28,30 +31,34 @@ Tech Stack
 As barras exibem uma autoavaliação aproximada de familiaridade, não uma certificação ou medida objetiva de competência.
 
 ---
+
 ## Decisões de identidade visual
+
 Paleta de cores:
 
-| Papel | Hex | Uso no site |
-|---|---|---|
-| Fundo (`ink`) | `#0A0614` | Fundo da página |
-| Superfície (`panel`) | `#130B26` | Cards, caixas de diálogo, painéis |
-| Texto (`fg`) | `#EDE9FE` | Texto principal e títulos |
-| Violeta 400 | `#A78BFA` | Textos e ícones secundários |
-| Violeta 500 | `#8B5CF6` | Bordas, destaques e estados de foco |
-| Violeta 700 | `#5B21B6` | Divisórias e sombras dos cards |
-| Ciano | `#22E5FF` | Interação, links, HUD, hover |
-| Verde neon | `#39FF14` | Progresso (XP), CTA principal, conquistas desbloqueadas |
-
+| Papel                | Hex       | Uso no site                                             |
+| -------------------- | --------- | ------------------------------------------------------- |
+| Fundo (`ink`)        | `#0A0614` | Fundo da página                                         |
+| Superfície (`panel`) | `#130B26` | Cards, caixas de diálogo, painéis                       |
+| Texto (`fg`)         | `#EDE9FE` | Texto principal e títulos                               |
+| Violeta 400          | `#A78BFA` | Textos e ícones secundários                             |
+| Violeta 500          | `#8B5CF6` | Bordas, destaques e estados de foco                     |
+| Violeta 700          | `#5B21B6` | Divisórias e sombras dos cards                          |
+| Ciano                | `#22E5FF` | Interação, links, HUD, hover                            |
+| Verde neon           | `#39FF14` | Progresso (XP), CTA principal, conquistas desbloqueadas |
 
 Tipografia:
+
 - Space Grotesk: títulos e chamadas, para dar presença sem comprometer a leitura.
 - IBM Plex Mono: corpo e detalhes técnicos (pesos 400, 500 e 700).
 - Press Start 2P: permanece disponível apenas em pequenos detalhes de HUD que reforçam a referência arcade.
 
 Tom e personalidade:
+
 - Tecnológico, curioso e acolhedor; o neon e os detalhes de jogo aparecem como acentos, sem competir com os projetos.
 
 Estrutura da página:
+
 - Hero
 - Sobre mim
 - Stack tecnológica
@@ -60,7 +67,9 @@ Estrutura da página:
 - Contato
 
 ---
+
 ## Referências
+
 ![Referência visual de uma seção de habilidades com barras e porcentagens](references/image-skills.png)
 **Skills —** a composição em grupos e barras torna várias tecnologias fáceis de comparar. Serviu de referência para a seção Tech Stack; os níveis exibidos seguem os valores informados pela autora e são identificados como autoavaliação.
 
@@ -82,36 +91,14 @@ A base escura e os tons de violeta mantêm o clima digital das referências; cia
 
 O que ficou como imaginei: uma identidade dark com personalidade, habilidades fáceis de percorrer e projetos reais em destaque. O que evoluiu: a estética arcade foi reduzida a acentos, para que a leitura e o conteúdo profissional tenham prioridade. Ainda gostaria de incluir capturas reais dos projetos e um deploy público do portfólio quando esses materiais e URLs estiverem disponíveis; por enquanto, as capas são ilustrações e o código aponta para os repositórios.
 
-## Iteração de refinamento
-
-### Prompt #4 — pedido de refinamento
-
-Transcrição do pedido recebido nesta rodada:
-
-> Baseado nesse trabalho, melhore/crie o que for preciso, até a documentação. Quero que fique um portfolio interessante e que chame atenção positivamente.
->
-> Níveis de cada tech stack:
-> - TypeScript / JavaScript 90%
-> - Node.js / NestJS 85%
-> - Next.js / React 85%
-> - Python 80%
-> - SQL / Prisma ORM 80%
-> - MongoDB 75%
-> - Java 65%
->
-> Repositórios do github:
-> - [https://github.com/liviapisanello/analytics]
-> - [https://github.com/liviapisanello/AssessorAI]
-> - [https://github.com/liviapisanello/codecam]
-
 ### Registro da correção
 
-| Campo | Registro |
-|---|---|
-| Problema | O site ainda continha percentuais demonstrativos, títulos e descrições genéricos, links para páginas de exemplo e um contato por e-mail que não havia sido informado. As barras também não representavam a stack completa. |
-| Prompt de correção | Usar os níveis fornecidos e apresentar os três repositórios indicados; melhorar o portfólio e sua documentação. |
-| Resultado | Os onze itens da stack agora exibem os níveis informados; os cards apresentam o propósito e as tecnologias descritas nos READMEs dos projetos; links de demonstração e dados de contato fictícios foram removidos. A hierarquia visual foi refinada para equilibrar personalidade arcade e leitura profissional. |
-| Aprendizado | Validar o conteúdo antes de priorizar efeitos visuais. Links reais, descrições específicas e níveis transparentes dão mais credibilidade do que placeholders ou indicadores decorativos sem contexto. |
+| Campo              | Registro                                                                                                                                                                                                                                                                                                         |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Problema           | O site ainda continha percentuais demonstrativos, títulos e descrições genéricos, links para páginas de exemplo e um contato por e-mail que não havia sido informado. As barras também não representavam a stack completa.                                                                                       |
+| Prompt de correção | Usar os níveis fornecidos e apresentar os três repositórios indicados; melhorar o portfólio e sua documentação.                                                                                                                                                                                                  |
+| Resultado          | Os onze itens da stack agora exibem os níveis informados; os cards apresentam o propósito e as tecnologias descritas nos READMEs dos projetos; links de demonstração e dados de contato fictícios foram removidos. A hierarquia visual foi refinada para equilibrar personalidade arcade e leitura profissional. |
+| Aprendizado        | Validar o conteúdo antes de priorizar efeitos visuais. Links reais, descrições específicas e níveis transparentes dão mais credibilidade do que placeholders ou indicadores decorativos sem contexto.                                                                                                            |
 
 ## Verificação manual
 
@@ -126,7 +113,9 @@ O portfólio está pronto para contato profissional direto via LinkedIn, e-mail 
 ---
 
 ## Prompts
+
 ### #1
+
 "Quero criar um portfólio pessoal como desenvolvedora Full Stack e estudante de Engenharia de Software, usando HTML e Tailwind CSS.
 
 Quero que o site tenha uma identidade visual bem marcante, moderna e criativa, fugindo um pouco daquele estilo de portfólio genérico. Gosto de tecnologia, comunicação e de estar sempre aprendendo coisas novas, então queria que isso também aparecesse na personalidade do site.
@@ -150,27 +139,37 @@ No geral, quero que meu portfólio transmita a imagem de uma desenvolvedora cria
 Pode explorar ideias de layout e composição, mantendo essa direção visual como base. O mais importante é que o resultado tenha identidade própria e pareça realmente pensado para mim, em vez de ser apenas mais um template de portfólio."
 
 ### #2
-Problema	
+
+Problema
+
 - O layout gerado ficou genérico e idêntico aos portfólios padrões criados por IA (Dark Mode simples, blocos estáticos). Faltaram os elementos gamificados, interatividade real (como HUD de jogo, barras de XP animadas, conquistas/achievements desbloqueáveis) e animações dinâmicas (efeito pixel art, retro-gaming ou micro-interações hover).
 
 Prompt de correção
+
 - "Ajuste o código HTML/Tailwind para afastar o design do padrão genérico de IA e criar um portfólio verdadeiramente gamificado e interativo. Adicione: 1) Um HUD / card estilo RPG de personagem com Status (HP, MP, Nível de Dev); 2) Barras de skill que pareçam barras de XP com efeito de carregamento em CSS; 3) Seção de conquistas (Achievements) desbloqueáveis ao passar o mouse ou clicar; 4) Animações suaves em Tailwind/CSS (efeito scanline de CRT ou iluminação neon retro); 5) Troque o esquema de cores para um estilo retrô-arcade ou cyber-RPG com paleta em tons de violeta, ciano e verde neon com fontes em estilo pixel/monospace."
 
-Resultado	
+Resultado
+
 - Resolveu totalmente. A estrutura passou de uma página corporativa simples para uma experiência imersiva de RPG/Arcade, destacando a criatividade e tornando o portfólio memorável.
 
-Aprendizado	
+Aprendizado
+
 - No prompt inicial, não basta citar "estética gamificada" de forma genérica. É necessário especificar quais mecânicas de jogo devem ser implementadas no front-end (ex.: status de RPG, badges de conquistas, animações CSS de barra de XP, paleta de cores retrô/arcade e fontes pixel/mono).
 
 ### #3
-Problema	
+
+Problema
+
 - O layout apresentava blocos de texto puros e placeholders vazios (ex.: [ Imagem ]), sem ícones representativos para as tecnologias (ex.: React, NestJS, Python) e sem nenhum elemento gráfico ou avatar personalizado que desse personalidade ao portfólio.
 
-Prompt de correção	
+Prompt de correção
+
 - "Adicione ícones correspondentes ao lado de cada tecnologia na seção de Tech Stack; Adicione uma moldura / card estilizado com bordas arredondadas e efeito de brilho para a foto de perfil/avatar no Hero;"
 
-Resultado	
+Resultado
+
 - O portfólio deixou de parecer um modelo genérico e passou a ter uma identidade rica, visualmente rápida de escanear e com cara de produto finalizado.
 
-Aprendizado	
+Aprendizado
+
 - Para que uma interface web não pareça um rascunho, o prompt inicial deve exigir a integração explícita de uma biblioteca de ícones SVG e a inclusão de componentes visuais estilizados (avatares, tags e ícones funcionais em botões/links).
