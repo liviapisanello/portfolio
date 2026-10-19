@@ -4,19 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfólio · Dev Full Stack</title>
+  <title>Lívia Pisanello — Desenvolvedora Full Stack</title>
   <meta name="description"
-    content="Portfólio gamificado de desenvolvedora Full Stack e estudante de Engenharia de Software: ficha de personagem, tech stack, conquistas e projetos.">
+    content="Conheça o trabalho de Lívia Pisanello: desenvolvedora full stack e estudante de Engenharia de Software. Projetos em dados, IA e educação acessível.">
   <meta name="theme-color" content="#0A0614">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lívia Pisanello — Desenvolvedora Full Stack">
+  <meta property="og:description" content="Projetos em dados, IA e educação acessível.">
 
   <!-- Marca a página como "com JS" antes da pintura: efeitos só se aplicam se o JS carregar -->
   <script>document.documentElement.classList.add('js');</script>
 
-  <!-- Fontes: Press Start 2P (títulos/labels pixel) + IBM Plex Mono (texto) -->
+  <!-- Fontes: Space Grotesk para títulos e IBM Plex Mono para detalhes técnicos. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!--
@@ -73,7 +76,7 @@
       <ul class="hidden items-center gap-1 md:flex">
         <li><a class="nav-link" href="#sobre">Sobre mim</a></li>
         <li><a class="nav-link" href="#skills">Skills</a></li>
-        <li><a class="nav-link" href="#conquistas">Conquistas</a></li>
+        <li><a class="nav-link" href="#conquistas">Como eu trabalho</a></li>
         <li><a class="nav-link" href="#projetos">Projetos</a></li>
         <li><a class="nav-link" href="#contato">Contato</a></li>
       </ul>
@@ -95,7 +98,7 @@
       <ul class="mx-auto flex max-w-6xl flex-col px-5 py-2">
         <li><a class="nav-link-mobile" href="#sobre">Sobre mim</a></li>
         <li><a class="nav-link-mobile" href="#skills">Skills</a></li>
-        <li><a class="nav-link-mobile" href="#conquistas">Conquistas</a></li>
+        <li><a class="nav-link-mobile" href="#conquistas">Como eu trabalho</a></li>
         <li><a class="nav-link-mobile" href="#projetos">Projetos</a></li>
         <li><a class="nav-link-mobile" href="#contato">Contato</a></li>
       </ul>
@@ -111,17 +114,17 @@
       <div
         class="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-5 py-14 lg:grid-cols-12 lg:py-16">
         <div class="lg:col-span-7">
-          <p class="chip"><span class="status-dot" aria-hidden="true"></span>FULL STACK DEVELOPER</p>
+          <p class="chip"><span class="status-dot" aria-hidden="true"></span>DESENVOLVEDORA FULL STACK</p>
 
           <h1 id="hero-title" class="neon-title mt-7 font-pixel text-[clamp(1.3rem,4.3vw,2.4rem)] leading-[1.5]">
-            Transformando ideias em experiências digitais.
+            Código com propósito.<br>Experiências que fazem sentido.
           </h1>
 
           <!-- Caixa de diálogo estilo RPG: o texto é digitado uma vez (JS); o texto completo fica no HTML -->
           <div class="dialog mt-8 max-w-xl">
             <p class="text-base leading-relaxed sm:text-lg">
-              <span data-typing>Desenvolvedora Full Stack e estudante de Engenharia de Software, apaixonada por
-                tecnologia, comunicação e aprendizado contínuo.</span>
+              <span data-typing>Sou Lívia: desenvolvedora full stack e estudante de Engenharia de Software. Gosto de
+                transformar problemas reais em produtos digitais úteis, acessíveis e bem pensados.</span>
             </p>
             <span class="dialog-arrow" aria-hidden="true">▼</span>
           </div>
@@ -132,16 +135,18 @@
               Explorar projetos
             </a>
             <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+            <a href="assets/docs/curriculo-livia-laur-pisanello.pdf"
+              class="btn btn-ghost"
+              download="Curriculo-Livia-Laur-Pisanello.pdf">
+              <i data-lucide="file-down" class="h-4 w-4" aria-hidden="true"></i>
+              Baixar currículo
+            </a>
 
-            <!-- EDITAR: URLs do GitHub e LinkedIn -->
+            <!-- Perfil público de código -->
             <span class="flex items-center gap-2">
-              <a href="https://github.com/" class="icon-btn" target="_blank" rel="noopener noreferrer"
-                aria-label="GitHub (abre em nova aba)" data-edit="github">
-                <i data-lucide="github" class="h-5 w-5" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/" class="icon-btn" target="_blank" rel="noopener noreferrer"
-                aria-label="LinkedIn (abre em nova aba)" data-edit="linkedin">
-                <i data-lucide="linkedin" class="h-5 w-5" aria-hidden="true"></i>
+              <a href="https://github.com/liviapisanello" class="icon-btn" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub de Lívia Pisanello (abre em nova aba)">
+                <i data-lucide="code-xml" class="h-5 w-5" aria-hidden="true"></i>
               </a>
             </span>
           </div>
@@ -149,14 +154,10 @@
 
         <!-- Card de personagem (momento visual do hero) -->
         <div class="lg:col-span-5">
-          <!--
-            EDITAR: HP, MP e XP usam data-value / data-max. Nível em "NV 01".
-            Os valores atuais (50/100) são PLACEHOLDERS, não uma medida real.
-          -->
-          <article class="char pixel-box" aria-labelledby="char-title" data-placeholder="true">
+          <article class="char pixel-box" aria-labelledby="char-title">
             <header class="char-bar">
-              <span class="font-pixel text-[0.65rem] text-cyan">PLAYER 1</span>
-              <span class="tag-live"><span class="status-dot" aria-hidden="true"></span>ONLINE</span>
+              <span class="font-pixel text-[0.65rem] text-cyan">DEV PROFILE</span>
+              <span class="tag-live"><span class="status-dot" aria-hidden="true"></span>EM EVOLUÇÃO</span>
             </header>
 
             <div class="flex items-center gap-4 p-5">
@@ -166,41 +167,20 @@
               <div class="min-w-0">
                 <h2 id="char-title" class="truncate font-pixel text-sm leading-6 text-fg" data-edit="nome">Lívia
                   Pisanello</h2>
-                <p class="mt-1 text-sm text-cyan">Classe: Full Stack</p>
-                <p class="mt-3 inline-block border-2 border-lime px-2 py-1 font-pixel text-[0.65rem] text-lime">NV 01
+                <p class="mt-1 text-sm text-cyan">Full Stack · Engenharia de Software</p>
+                <p class="mt-3 inline-block border-2 border-lime px-2 py-1 font-pixel text-[0.65rem] text-lime">BUILDING
                 </p>
-              </div>
-            </div>
-
-            <div class="space-y-4 border-t-2 border-violet-700 p-5" role="group" aria-label="Status do personagem">
-              <div class="stat stat-hp" data-value="75" data-max="100">
-                <div class="stat-head"><span class="stat-name">HP</span><span class="stat-num"><span
-                      data-num></span>/100</span></div>
-                <div class="meter" role="progressbar" aria-label="HP" aria-valuemin="0" aria-valuemax="100"><span
-                    class="meter-fill"></span></div>
-              </div>
-              <div class="stat stat-mp" data-value="75" data-max="100">
-                <div class="stat-head"><span class="stat-name">MP</span><span class="stat-num"><span
-                      data-num></span>/100</span></div>
-                <div class="meter" role="progressbar" aria-label="MP" aria-valuemin="0" aria-valuemax="100"><span
-                    class="meter-fill"></span></div>
-              </div>
-              <div class="stat stat-xp" data-value="75" data-max="100">
-                <div class="stat-head"><span class="stat-name">XP · Nível de Dev</span><span class="stat-num"><span
-                      data-num></span>/100</span></div>
-                <div class="meter" role="progressbar" aria-label="XP para o próximo nível" aria-valuemin="0"
-                  aria-valuemax="100"><span class="meter-fill"></span></div>
               </div>
             </div>
 
             <dl class="divide-y-2 divide-violet-700/60 border-t-2 border-violet-700 text-sm">
               <div class="flex items-center justify-between gap-4 px-5 py-3">
                 <dt class="hud-label">Guilda</dt>
-                <dd>Engenharia de Software</dd>
+                <dd>Estudante</dd>
               </div>
               <div class="flex items-center justify-between gap-4 px-5 py-3">
                 <dt class="hud-label">Missão atual</dt>
-                <dd>Aprender coisas novas</dd>
+                <dd>Construir e evoluir</dd>
               </div>
             </dl>
           </article>
@@ -215,12 +195,12 @@
           <h2 id="sobre-title" class="section-title">Sobre mim</h2>
           <div class="mt-7 space-y-5 text-base leading-relaxed text-fg/85 sm:text-lg">
             <p>
-              Sou desenvolvedora Full Stack e estudante de Engenharia de Software. Gosto de construir coisas que
-              funcionam por dentro e fazem sentido por fora.
+              Sou desenvolvedora full stack e estudante de Engenharia de Software. Gosto de construir produtos
+              digitais que funcionam por dentro e fazem sentido para quem usa.
             </p>
             <p>
-              Tecnologia me move, comunicação faz o trabalho andar, e aprender coisa nova é o que me mantém curiosa. Se
-              existe um problema interessante, eu quero entender como ele funciona.
+              Exploro diferentes partes de um produto — da interface às regras de negócio e aos dados — com atenção à
+              clareza, à acessibilidade e às necessidades reais.
             </p>
           </div>
 
@@ -248,13 +228,13 @@
     </section>
 
     <!-- ============ TECH STACK ============ -->
-    <section id="skills" class="section section-alt" aria-labelledby="skills-title" data-placeholder="true">
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
       <div class="mx-auto max-w-6xl px-5">
         <div class="reveal flex flex-wrap items-end justify-between gap-5">
           <div class="max-w-2xl">
             <h2 id="skills-title" class="section-title">Tech stack</h2>
             <p class="mt-5 text-base leading-relaxed text-fg/85 sm:text-lg">
-              Meu inventário de ferramentas, com barras de XP por tecnologia.
+              Tecnologias que venho aplicando em projetos e aprofundando ao longo da minha formação.
             </p>
           </div>
           <button id="replay-xp" type="button" class="btn btn-ghost btn-sm">
@@ -265,8 +245,7 @@
 
         <!--
           EDITAR OS NÍVEIS: altere o data-level (0–100) de cada <li class="skill">.
-          Percentual, barra, LV e rótulo atualizam sozinhos.
-          Os valores abaixo (50) são PLACEHOLDERS, não uma avaliação real.
+          Percentual, barra e rótulo atualizam automaticamente.
         -->
         <div class="mt-12 grid gap-6 lg:grid-cols-5">
 
@@ -287,14 +266,14 @@
                   aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="80">
                 <div class="skill-head"><i data-lucide="terminal" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">Python</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Python"
                   aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="65">
                 <div class="skill-head"><i data-lucide="coffee" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">Java</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Java" aria-valuemin="0"
@@ -308,21 +287,28 @@
             <h3 class="group-title"><i data-lucide="layers" class="h-4 w-4" aria-hidden="true"></i>Frameworks e runtime
             </h3>
             <ul class="mt-6 space-y-7">
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="85">
                 <div class="skill-head"><i data-lucide="server" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">NestJS</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com NestJS"
                   aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="85">
                 <div class="skill-head"><i data-lucide="layout-template" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">Next.js</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Next.js"
                   aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="85">
+                <div class="skill-head"><i data-lucide="atom" class="skill-icon" aria-hidden="true"></i><span
+                    class="skill-name">React</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com React"
+                  aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
+                <p class="skill-label" data-label></p>
+              </li>
+              <li class="skill" data-level="85">
                 <div class="skill-head"><i data-lucide="hexagon" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">Node.js</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Node.js"
@@ -335,24 +321,24 @@
           <div class="reveal pixel-box p-6 lg:col-span-5">
             <h3 class="group-title"><i data-lucide="database" class="h-4 w-4" aria-hidden="true"></i>Dados</h3>
             <ul class="mt-6 grid gap-x-8 gap-y-7 md:grid-cols-3">
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="75">
                 <div class="skill-head"><i data-lucide="database" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">MongoDB</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com MongoDB"
                   aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="80">
                 <div class="skill-head"><i data-lucide="table-2" class="skill-icon" aria-hidden="true"></i><span
                     class="skill-name">SQL</span><span class="skill-pct"><span data-pct></span>%</span></div>
                 <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com SQL" aria-valuemin="0"
                   aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
-              <li class="skill" data-level="50">
+              <li class="skill" data-level="80">
                 <div class="skill-head"><i data-lucide="gem" class="skill-icon" aria-hidden="true"></i><span
-                    class="skill-name">Prisma</span><span class="skill-pct"><span data-pct></span>%</span></div>
-                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Prisma"
+                    class="skill-name">Prisma ORM</span><span class="skill-pct"><span data-pct></span>%</span></div>
+                <div class="meter meter-skill" role="progressbar" aria-label="Familiaridade com Prisma ORM"
                   aria-valuemin="0" aria-valuemax="100"><span class="meter-fill"></span></div>
                 <p class="skill-label" data-label></p>
               </li>
@@ -363,10 +349,6 @@
         <p class="mt-6 text-sm text-fg/70">
           As porcentagens são uma representação visual aproximada de familiaridade, não uma métrica de competência.
         </p>
-        <!-- Visível enquanto a seção tiver data-placeholder="true". Mude para "false" ao editar os níveis. -->
-        <p class="placeholder-note mt-2 hidden text-sm text-lime" role="note">
-          Valores ilustrativos (50%) a serem substituídos pelos níveis reais.
-        </p>
       </div>
     </section>
 
@@ -375,9 +357,9 @@
       <div class="mx-auto max-w-6xl px-5">
         <div class="reveal flex flex-wrap items-end justify-between gap-6">
           <div class="max-w-2xl">
-            <h2 id="conquistas-title" class="section-title">Conquistas</h2>
+            <h2 id="conquistas-title" class="section-title">Como eu trabalho</h2>
             <p class="mt-5 text-base leading-relaxed text-fg/85 sm:text-lg">
-              Passe o mouse ou clique (ou toque) em cada cartão para desbloquear.
+              Um toque de gamificação para revelar as habilidades que levo para cada projeto. Clique ou use o teclado.
             </p>
           </div>
           <div class="w-full max-w-xs">
@@ -431,11 +413,11 @@
             </button>
           </li>
           <li class="reveal">
-            <button type="button" class="ach" data-id="inventario" data-title="Inventário de 10">
+            <button type="button" class="ach" data-id="inventario" data-title="Inventário de 11">
               <span class="ach-lock"><i data-lucide="lock" class="ach-icon" aria-hidden="true"></i><span
                   class="ach-title">Conquista bloqueada</span><span class="ach-desc">Clique para revelar</span></span>
               <span class="ach-open"><i data-lucide="package" class="ach-icon" aria-hidden="true"></i><span
-                  class="ach-title">Inventário de 10</span><span class="ach-desc">Dez tecnologias na stack, entre
+                  class="ach-title">Inventário de 11</span><span class="ach-desc">Onze tecnologias na stack, entre
                   linguagens, frameworks e dados.</span></span>
             </button>
           </li>
@@ -463,43 +445,34 @@
         <div class="reveal max-w-2xl">
           <h2 id="projetos-title" class="section-title">Projetos em destaque</h2>
           <p class="mt-5 text-base leading-relaxed text-fg/85 sm:text-lg">
-            Três fases para ver como eu penso e como escrevo código.
+            Projetos que mostram diferentes formas de transformar problemas em soluções.
           </p>
         </div>
 
-        <!--
-          EDITAR cada card: imagem (src + alt), título, descrição, tecnologias e links.
-          Os links são placeholders válidos (github.com e example.com).
-          Sem demo online? Apague o <a> "Demo" do card.
-        -->
+        <!-- Capas ilustrativas; os links apontam para os repositórios de código. -->
         <div class="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
 
           <article class="reveal project pixel-box">
             <div class="project-media">
               <img src="assets/img/project-1.svg"
-                alt="Prévia ilustrativa do Projeto 1: painel com gráficos e cartões (placeholder)" width="640"
+                alt="Ilustração de um painel analítico com gráficos e cartões" width="640"
                 height="400" loading="lazy" decoding="async">
-              <span class="project-stage">FASE 01</span>
+              <span class="project-stage">DADOS · 01</span>
             </div>
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-pixel text-sm leading-6 text-fg">Nome do Projeto 1</h3>
-              <p class="mt-3 text-sm leading-relaxed text-fg/80">Descrição curta do projeto: o problema que resolve e o
-                que você construiu.</p>
+              <h3 class="font-pixel text-sm leading-6 text-fg">Analytics · InDespensa</h3>
+              <p class="mt-3 text-sm leading-relaxed text-fg/80">Análise exploratória e modelo de machine learning para
+                identificar potenciais clientes do aplicativo, com métricas e visualizações dos resultados.</p>
               <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tecnologias usadas">
-                <li class="tag">NestJS</li>
-                <li class="tag">MongoDB</li>
-                <li class="tag">TypeScript</li>
+                <li class="tag">Python</li>
+                <li class="tag">Scikit-learn</li>
+                <li class="tag">Power BI</li>
               </ul>
               <div class="mt-auto flex flex-wrap gap-3 pt-6">
-                <a class="link-btn link-btn-primary" href="https://github.com/" target="_blank"
-                  rel="noopener noreferrer" data-edit="repo">
-                  <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>Código<span class="sr-only"> do Nome do
-                    Projeto 1 no GitHub (abre em nova aba)</span>
-                </a>
-                <a class="link-btn" href="https://example.com/" target="_blank" rel="noopener noreferrer"
-                  data-edit="demo">
-                  <i data-lucide="external-link" class="h-4 w-4" aria-hidden="true"></i>Demo<span class="sr-only"> do
-                    Nome do Projeto 1 (abre em nova aba)</span>
+                <a class="link-btn link-btn-primary" href="https://github.com/liviapisanello/analytics" target="_blank"
+                  rel="noopener noreferrer">
+                  <i data-lucide="code-xml" class="h-4 w-4" aria-hidden="true"></i>Ver repositório<span class="sr-only">
+                    Analytics no GitHub (abre em nova aba)</span>
                 </a>
               </div>
             </div>
@@ -508,29 +481,24 @@
           <article class="reveal project pixel-box">
             <div class="project-media">
               <img src="assets/img/project-2.svg"
-                alt="Prévia ilustrativa do Projeto 2: tela de aplicativo com lista e botão de ação (placeholder)"
+                alt="Ilustração de uma interface de estudos com lista de conteúdos e ações"
                 width="640" height="400" loading="lazy" decoding="async">
-              <span class="project-stage">FASE 02</span>
+              <span class="project-stage">EDUCAÇÃO · 02</span>
             </div>
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-pixel text-sm leading-6 text-fg">Nome do Projeto 2</h3>
-              <p class="mt-3 text-sm leading-relaxed text-fg/80">Descrição curta do projeto: o problema que resolve e o
-                que você construiu.</p>
+              <h3 class="font-pixel text-sm leading-6 text-fg">CodeCam</h3>
+              <p class="mt-3 text-sm leading-relaxed text-fg/80">Plataforma mobile-first que transforma fotos de
+                materiais em resumos, tópicos e flashcards, com acessibilidade no centro da experiência.</p>
               <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tecnologias usadas">
-                <li class="tag">Next.js</li>
-                <li class="tag">Prisma</li>
-                <li class="tag">SQL</li>
+                <li class="tag">React · TypeScript</li>
+                <li class="tag">NestJS · Prisma</li>
+                <li class="tag">Gemini</li>
               </ul>
               <div class="mt-auto flex flex-wrap gap-3 pt-6">
-                <a class="link-btn link-btn-primary" href="https://github.com/" target="_blank"
-                  rel="noopener noreferrer" data-edit="repo">
-                  <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>Código<span class="sr-only"> do Nome do
-                    Projeto 2 no GitHub (abre em nova aba)</span>
-                </a>
-                <a class="link-btn" href="https://example.com/" target="_blank" rel="noopener noreferrer"
-                  data-edit="demo">
-                  <i data-lucide="external-link" class="h-4 w-4" aria-hidden="true"></i>Demo<span class="sr-only"> do
-                    Nome do Projeto 2 (abre em nova aba)</span>
+                <a class="link-btn link-btn-primary" href="https://github.com/liviapisanello/codecam" target="_blank"
+                  rel="noopener noreferrer">
+                  <i data-lucide="code-xml" class="h-4 w-4" aria-hidden="true"></i>Ver repositório<span class="sr-only">
+                    CodeCam no GitHub (abre em nova aba)</span>
                 </a>
               </div>
             </div>
@@ -539,29 +507,24 @@
           <article class="reveal project pixel-box md:col-span-2 lg:col-span-1">
             <div class="project-media">
               <img src="assets/img/project-3.svg"
-                alt="Prévia ilustrativa do Projeto 3: janela de terminal com respostas de uma API (placeholder)"
+                alt="Ilustração de uma conversa com assistente digital em uma janela de terminal"
                 width="640" height="400" loading="lazy" decoding="async">
-              <span class="project-stage">FASE 03</span>
+              <span class="project-stage">INTELIGÊNCIA ARTIFICIAL · 03</span>
             </div>
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-pixel text-sm leading-6 text-fg">Nome do Projeto 3</h3>
-              <p class="mt-3 text-sm leading-relaxed text-fg/80">Descrição curta do projeto: o problema que resolve e o
-                que você construiu.</p>
+              <h3 class="font-pixel text-sm leading-6 text-fg">Assessor.AI</h3>
+              <p class="mt-3 text-sm leading-relaxed text-fg/80">Assistente conversacional que encaminha pedidos a
+                especialistas em finanças, agenda e FAQ com busca em uma base de documentos.</p>
               <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tecnologias usadas">
                 <li class="tag">Python</li>
-                <li class="tag">Node.js</li>
-                <li class="tag">SQL</li>
+                <li class="tag">LangGraph · Gemini</li>
+                <li class="tag">FAISS · PostgreSQL</li>
               </ul>
               <div class="mt-auto flex flex-wrap gap-3 pt-6">
-                <a class="link-btn link-btn-primary" href="https://github.com/" target="_blank"
-                  rel="noopener noreferrer" data-edit="repo">
-                  <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>Código<span class="sr-only"> do Nome do
-                    Projeto 3 no GitHub (abre em nova aba)</span>
-                </a>
-                <a class="link-btn" href="https://example.com/" target="_blank" rel="noopener noreferrer"
-                  data-edit="demo">
-                  <i data-lucide="external-link" class="h-4 w-4" aria-hidden="true"></i>Demo<span class="sr-only"> do
-                    Nome do Projeto 3 (abre em nova aba)</span>
+                <a class="link-btn link-btn-primary" href="https://github.com/liviapisanello/AssessorAI" target="_blank"
+                  rel="noopener noreferrer">
+                  <i data-lucide="code-xml" class="h-4 w-4" aria-hidden="true"></i>Ver repositório<span class="sr-only">
+                    Assessor.AI no GitHub (abre em nova aba)</span>
                 </a>
               </div>
             </div>
@@ -578,31 +541,31 @@
         <h2 id="contato-title" class="neon-title font-pixel text-[clamp(1.3rem,4.6vw,2.6rem)] leading-[1.5]">Vamos
           construir algo incrível?</h2>
         <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-fg/85 sm:text-lg">
-          Estou sempre aberta a aprender, trocar ideias e explorar novas oportunidades na tecnologia.
+          Estou sempre aberta a aprender, trocar ideias e explorar novas oportunidades na tecnologia. Me chama para conversar sobre produto, código e próximos passos.
         </p>
 
-        <!-- EDITAR: troque seu.email@exemplo.com pelo e-mail real (nos dois lugares) -->
         <div class="mt-10 flex flex-col items-center gap-5">
-          <a href="mailto:seu.email@exemplo.com" class="btn btn-primary btn-lg" data-edit="email">
+          <a href="mailto:livia.laur26@gmail.com" class="btn btn-primary btn-lg" target="_blank"
+            rel="noopener noreferrer">
             <i data-lucide="mail" class="h-5 w-5" aria-hidden="true"></i>
-            Enviar um e-mail
+            Enviar e-mail
           </a>
-          <p class="terminal-line" data-edit="email-text"><span aria-hidden="true">&gt; </span>seu.email@exemplo.com</p>
+          <a href="tel:+5511978126235" class="btn btn-ghost btn-lg">
+            <i data-lucide="phone" class="h-5 w-5" aria-hidden="true"></i>
+            (11) 97812-6235
+          </a>
+          <p class="terminal-line"><span aria-hidden="true">&gt; </span>livia.laur26@gmail.com • +55 11 97812-6235</p>
         </div>
 
         <ul class="mt-9 flex flex-wrap items-center justify-center gap-4">
           <li>
-            <a href="https://github.com/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
-              data-edit="github">
-              <i data-lucide="github" class="h-4 w-4" aria-hidden="true"></i>GitHub<span class="sr-only"> (abre em nova
-                aba)</span>
+            <a href="https://www.linkedin.com/in/l%C3%ADvia-laur-pisanello-204693296/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="linkedin" class="h-4 w-4" aria-hidden="true"></i>LinkedIn
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
-              data-edit="linkedin">
-              <i data-lucide="linkedin" class="h-4 w-4" aria-hidden="true"></i>LinkedIn<span class="sr-only"> (abre em
-                nova aba)</span>
+            <a href="#projetos" class="btn btn-ghost">
+              <i data-lucide="folder-open" class="h-4 w-4" aria-hidden="true"></i>Explorar projetos
             </a>
           </li>
         </ul>

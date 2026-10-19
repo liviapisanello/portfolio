@@ -1,5 +1,15 @@
 # Construindo Portfolio com IA
 
+Portfólio pessoal de Lívia Pisanello, desenvolvedora full stack e estudante de Engenharia de Software. A experiência combina identidade arcade com leitura clara, projetos verificáveis e uma apresentação acessível em telas grandes e pequenas.
+
+## Resultado e execução
+
+- Página estática: `index.html`, com estilos em `assets/css/styles.css` e interações em `assets/js/main.js`.
+- O currículo em PDF está em `assets/docs/curriculo-livia-laur-pisanello.pdf` e pode ser baixado pelo botão no destaque inicial.
+- Para visualizar localmente, na raiz do projeto execute `python3 -m http.server 8000` e acesse `http://localhost:8000`.
+- O Tailwind Play CDN, Lucide e Google Fonts são carregados externamente; recursos visuais e interações podem ficar limitados sem conexão com a internet. Para publicação em produção, compile o Tailwind em CSS estático.
+- Os links de projeto abrem os repositórios GitHub; os dados de contato incluem LinkedIn, e-mail e telefone para facilitar contato profissional.
+
 ## Prompt Inicial
 Preciso que faça um projeto em html com tailwind. Ele consiste em um portfólio dev interessante, claro e que chame a atenção para as skills.
 Sobre mim, sou desenvolvedora fullstack e estudante de engenharia de software.
@@ -15,6 +25,8 @@ Tech Stack
 - MongoDB 75%
 - Java 65%
 
+As barras exibem uma autoavaliação aproximada de familiaridade, não uma certificação ou medida objetiva de competência.
+
 ---
 ## Decisões de identidade visual
 Paleta de cores:
@@ -25,42 +37,91 @@ Paleta de cores:
 | Superfície (`panel`) | `#130B26` | Cards, caixas de diálogo, painéis |
 | Texto (`fg`) | `#EDE9FE` | Texto principal e títulos |
 | Violeta 400 | `#A78BFA` | Textos e ícones secundários |
-| Violeta 500 | `#8B5CF6` | Bordas das caixas pixel |
-| Violeta 700 | `#5B21B6` | Sombras duras e divisórias |
+| Violeta 500 | `#8B5CF6` | Bordas, destaques e estados de foco |
+| Violeta 700 | `#5B21B6` | Divisórias e sombras dos cards |
 | Ciano | `#22E5FF` | Interação, links, HUD, hover |
 | Verde neon | `#39FF14` | Progresso (XP), CTA principal, conquistas desbloqueadas |
 
 
-Tipografia: 
-- Press Start 2P: fonte pixel, usada só em títulos, botões e rótulos curtos (HUD, HP/MP/XP, conquistas).
-- IBM Plex Mono: monospace, usada no texto corrido (pesos 400, 500 e 700).
+Tipografia:
+- Space Grotesk: títulos e chamadas, para dar presença sem comprometer a leitura.
+- IBM Plex Mono: corpo e detalhes técnicos (pesos 400, 500 e 700).
+- Press Start 2P: permanece disponível apenas em pequenos detalhes de HUD que reforçam a referência arcade.
 
 Tom e personalidade:
-- Tech / Criativa / Intensa
+- Tecnológico, curioso e acolhedor; o neon e os detalhes de jogo aparecem como acentos, sem competir com os projetos.
 
 Estrutura da página:
 - Hero
 - Sobre mim
 - Stack tecnológica
+- Como eu trabalho (cartões interativos)
 - Projetos
 - Contato
 
 ---
 ## Referências
-![alt text](references/image-skills.png)
-Manter a ideia de colocar a porcentagem de conhecimento de cada tech stack.
+![Referência visual de uma seção de habilidades com barras e porcentagens](references/image-skills.png)
+**Skills —** a composição em grupos e barras torna várias tecnologias fáceis de comparar. Serviu de referência para a seção Tech Stack; os níveis exibidos seguem os valores informados pela autora e são identificados como autoavaliação.
 
-![alt text](references/image-projects.png)
-Manter as referências para links no github (3 destaques com título e imagem)
+![Referência visual de um portfólio com cards de projetos](references/image-projects.png)
+**Projetos —** os cards organizam imagem, título, descrição e acesso ao código. Inspirou os três destaques com ilustrações próprias e links diretos para os repositórios.
 
-![alt text](references/image-theme.png)
-Manter o clima da imagem dev, entretanto, alterando a cor para as referenciadas
+![Referência visual de um portfolio escuro com detalhes ciano](references/image-theme.png)
+**Tema —** o fundo escuro, a grade técnica e o contraste ciano criam uma atmosfera de desenvolvimento sem depender de uma foto genérica. Inspirou o fundo, os detalhes de grade e a combinação de violeta e ciano.
 
-![alt text](references/image-game.png)
-Manter estética criativa, mais gameficada
+![Referência visual de uma interface retrô com ícones de pastas](references/image-game.png)
+**Interface lúdica —** ícones de pastas, janelas e elementos de desktop retrô sugerem personalidade. A ideia foi traduzida em pequenos detalhes arcade, barras animadas e uma interação secreta, mantendo uma navegação convencional.
 
-![alt text](references/image-contact.png)
-Manter seção de contato
+![Referência visual de uma seção de contato tipográfica](references/image-contact.png)
+**Contato —** a tipografia em grande escala e a chamada concentrada em uma seção própria dão peso ao encerramento da página. A hierarquia foi reaproveitada, mas adaptada à paleta violeta/ciano e aos canais profissionais disponíveis: LinkedIn, e-mail e telefone.
+
+## Reflexão sobre a identidade visual
+
+A base escura e os tons de violeta mantêm o clima digital das referências; ciano destaca navegação e informação técnica, enquanto o verde neon fica reservado para progresso e ações principais. A tipografia de títulos foi refinada para Space Grotesk, mais confortável em frases longas; a fonte pixel permanece em elementos curtos de interface. A página conserva a linguagem de jogo em detalhes e interações, sem transformar experiência ou níveis de habilidade em métricas objetivas.
+
+O que ficou como imaginei: uma identidade dark com personalidade, habilidades fáceis de percorrer e projetos reais em destaque. O que evoluiu: a estética arcade foi reduzida a acentos, para que a leitura e o conteúdo profissional tenham prioridade. Ainda gostaria de incluir capturas reais dos projetos e um deploy público do portfólio quando esses materiais e URLs estiverem disponíveis; por enquanto, as capas são ilustrações e o código aponta para os repositórios.
+
+## Iteração de refinamento
+
+### Prompt #4 — pedido de refinamento
+
+Transcrição do pedido recebido nesta rodada:
+
+> Baseado nesse trabalho, melhore/crie o que for preciso, até a documentação. Quero que fique um portfolio interessante e que chame atenção positivamente.
+>
+> Níveis de cada tech stack:
+> - TypeScript / JavaScript 90%
+> - Node.js / NestJS 85%
+> - Next.js / React 85%
+> - Python 80%
+> - SQL / Prisma ORM 80%
+> - MongoDB 75%
+> - Java 65%
+>
+> Repositórios do github:
+> - [https://github.com/liviapisanello/analytics]
+> - [https://github.com/liviapisanello/AssessorAI]
+> - [https://github.com/liviapisanello/codecam]
+
+### Registro da correção
+
+| Campo | Registro |
+|---|---|
+| Problema | O site ainda continha percentuais demonstrativos, títulos e descrições genéricos, links para páginas de exemplo e um contato por e-mail que não havia sido informado. As barras também não representavam a stack completa. |
+| Prompt de correção | Usar os níveis fornecidos e apresentar os três repositórios indicados; melhorar o portfólio e sua documentação. |
+| Resultado | Os onze itens da stack agora exibem os níveis informados; os cards apresentam o propósito e as tecnologias descritas nos READMEs dos projetos; links de demonstração e dados de contato fictícios foram removidos. A hierarquia visual foi refinada para equilibrar personalidade arcade e leitura profissional. |
+| Aprendizado | Validar o conteúdo antes de priorizar efeitos visuais. Links reais, descrições específicas e níveis transparentes dão mais credibilidade do que placeholders ou indicadores decorativos sem contexto. |
+
+## Verificação manual
+
+- Navegação por âncoras e menu mobile.
+- Links dos três cards para os respectivos repositórios GitHub.
+- Barras de tecnologia e respeito à preferência por movimento reduzido.
+- Interações dos cartões e do controle de efeitos CRT.
+- Layout em telas pequenas e grandes.
+
+O portfólio está pronto para contato profissional direto via LinkedIn, e-mail e telefone. O endereço de deploy público ainda não foi informado, mas o site e os projetos já apontam para recursos públicos confirmados.
 
 ---
 

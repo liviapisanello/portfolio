@@ -17,7 +17,7 @@
   };
 
   /* ---------- Medidores: skills (data-level) e status (data-value/data-max) ---------- */
-  const familiarity = (n) => (n < 40 ? 'Conhecendo' : n < 70 ? 'Praticando' : 'Fluente');
+  const familiarity = (n) => (n < 70 ? 'Em prática' : n < 85 ? 'Uso recorrente' : 'Uso frequente');
 
   function setupMeters() {
     $$('.skill').forEach((el) => {
@@ -40,8 +40,6 @@
       bar.setAttribute('aria-valuemax', max);
     });
 
-    // Avisos de placeholder: visíveis enquanto o bloco tiver data-placeholder="true"
-    $$('[data-placeholder="true"]').forEach((el) => $('.placeholder-note', el)?.classList.remove('hidden'));
   }
 
   /* Contagem em 20 passos, no mesmo ritmo da barra (steps(20) em 1,4s) */
